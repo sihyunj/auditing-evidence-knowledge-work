@@ -43,17 +43,16 @@ Data (not included):
 
 - **Text corpora** — the full evaluated corpora are `abstracts_texts.json`
   (120 arXiv abstracts) and `wiki_texts.json` (71 Wikipedia introductions),
-  aligned lists of `human`, `ai`, `humanized_ai`, in Supplementary Material S1
-  of the paper (`original_release/results/main/`). Reference texts come from the
-  public arXiv Atom API (cs.CL, cs.LG, cs.IR, cs.CY) and the Wikipedia REST API
-  (140 fixed topics, `corpus.py`); generations and rewrites come from DeepSeek
-  V4 Flash at temperature 0.8. `run_audit.py corpus` rebuilds a corpus from
-  these sources, but generation is not seeded, so a rebuilt corpus will not
-  match the evaluated one. A small sample of the evaluated corpora
+  aligned lists of `human`, `ai`, `humanized_ai`. They are not distributed
+  with this repository. A small sample of the evaluated corpora
   (`sample_corpus/`: the first 10 abstracts — 8% of 120 — and the first 8
   Wikipedia intros — 11% of 71 —, same format; 18 of 191 items, about 9%) is
-  included so the text rerun can be tried without the full corpora; see
-  "How to run" below.
+  included so the text rerun can be tried; see "How to run" below. The full
+  corpora can be rebuilt from the public sources with `run_audit.py corpus`
+  (reference texts from the public arXiv Atom API, cs.CL, cs.LG, cs.IR, cs.CY,
+  and the Wikipedia REST API, 140 fixed topics; generations and rewrites by
+  DeepSeek V4 Flash at temperature 0.8), but generation is not seeded, so a
+  rebuilt corpus will not match the evaluated one.
 - **Graph benchmarks** `YelpChi.mat` and `Amazon.mat` from GADBench
   (<https://github.com/squareRoot3/GADBench>), which redistributes the CARE-GNN
   releases.
@@ -102,9 +101,9 @@ sample is small (10 abstracts, 8 Wikipedia intros — about 9% of the full
 corpora) — a few values are
 degenerate at this size, e.g. the item-level classifier on Wikipedia. The
 DeepSeek numerical-judge rows show "(not run)" on the sample because the
-shipped per-item judge scores belong to the full corpus. To reproduce the
-paper's numbers, run the text mode on the full corpora from Supplementary
-Material S1 instead.
+shipped per-item judge scores belong to the full corpus. To verify the
+paper's numbers, run the default check (`python run_audit.py`), which
+recomputes the 129 headline values from the shipped results.
 - `graph`: own- and neighbour-feature classifiers under content forgery and
   relation camouflage, then the β sweeps for BWGNN (relations; combined) and
   CARE-style (combined).
