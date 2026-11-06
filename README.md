@@ -41,16 +41,19 @@ pip install -r requirements.txt
 
 Data (not included):
 
-- **Text corpora** `abstracts_texts.json` and `wiki_texts.json` (aligned lists
-  `human`, `ai`, `humanized_ai`) are distributed with the paper's supplementary
-  material. Reference texts come from the public arXiv Atom API (cs.CL, cs.LG,
-  cs.IR, cs.CY) and the Wikipedia REST API (140 fixed topics, `corpus.py`);
-  generations and rewrites come from DeepSeek V4 Flash at temperature 0.8.
-  `run_audit.py corpus` rebuilds a corpus from these sources, but generation is
-  not seeded, so a rebuilt corpus will not match the evaluated one. A small
-  sample of the evaluated corpora (`sample_corpus/`: the first 10 abstracts and
-  the first 8 Wikipedia intros, same format) is included so the text rerun can
-  be tried without the full corpora; see "How to run" below.
+- **Text corpora** — the full evaluated corpora are `abstracts_texts.json`
+  (120 arXiv abstracts) and `wiki_texts.json` (71 Wikipedia introductions),
+  aligned lists of `human`, `ai`, `humanized_ai`, in Supplementary Material S1
+  of the paper (`original_release/results/main/`). Reference texts come from the
+  public arXiv Atom API (cs.CL, cs.LG, cs.IR, cs.CY) and the Wikipedia REST API
+  (140 fixed topics, `corpus.py`); generations and rewrites come from DeepSeek
+  V4 Flash at temperature 0.8. `run_audit.py corpus` rebuilds a corpus from
+  these sources, but generation is not seeded, so a rebuilt corpus will not
+  match the evaluated one. A small sample of the evaluated corpora
+  (`sample_corpus/`: the first 10 abstracts — 8% of 120 — and the first 8
+  Wikipedia intros — 11% of 71 —, same format; 18 of 191 items, about 9%) is
+  included so the text rerun can be tried without the full corpora; see
+  "How to run" below.
 - **Graph benchmarks** `YelpChi.mat` and `Amazon.mat` from GADBench
   (<https://github.com/squareRoot3/GADBench>), which redistributes the CARE-GNN
   releases.
@@ -95,7 +98,8 @@ python run_audit.py text --corpus sample_corpus/
 
 This is a smoke test: it runs the whole text pipeline in about 30 s (measured
 31.8 s on a 4-CPU VM), but the numbers will differ from the paper because the
-sample is small (10 abstracts, 8 Wikipedia intros) — a few values are
+sample is small (10 abstracts, 8 Wikipedia intros — about 9% of the full
+corpora) — a few values are
 degenerate at this size, e.g. the item-level classifier on Wikipedia. The
 DeepSeek numerical-judge rows show "(not run)" on the sample because the
 shipped per-item judge scores belong to the full corpus. To reproduce the
