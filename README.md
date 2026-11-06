@@ -66,7 +66,7 @@ python run_audit.py
 Reads the shipped results in `results/`, recomputes the DeepSeek numerical-judge
 AUROCs from its per-item scores, and prints 129 headline values next to the values
 reported in the paper, marking any that differ at the paper's precision (exit code
-0 if all agree). Runs in about a second.
+0 if all agree). Runs in under half a second (measured 0.2–0.4 s on a 4-CPU VM).
 
 Full reruns write JSON to `outputs/` and print the same comparison:
 
@@ -81,7 +81,8 @@ python run_audit.py corpus --out DIR
   intervals; the DeepSeek numerical judge uses its shipped per-item scores.
   `--detectors` adds GPT-2 and RoBERTa; `--judges` re-scores the abstracts
   (`$JUDGE_EP`, `$LLM_KEY`, `$LLM_MODEL` for DeepSeek; `$JUDGE_MODEL_PATH` for
-  Qwen). About 4 minutes on CPU without detectors or judges.
+  Qwen). About 2 minutes on CPU without detectors or judges (measured 106–114 s
+  on a 4-CPU VM; the MiniLM model downloads once, about 15 s, on first use).
 - `graph`: own- and neighbour-feature classifiers under content forgery and
   relation camouflage, then the β sweeps for BWGNN (relations; combined) and
   CARE-style (combined).
