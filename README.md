@@ -1,6 +1,6 @@
 # Auditing Evidence in AI-Assisted Knowledge Work: Detector Choice, Record Coverage, and Combined Attacks
 
-Minimal implementation of the paper's two studies.
+Core implementation of the paper's two studies.
 
 ## What the code reproduces
 
@@ -47,7 +47,10 @@ Data (not included):
   cs.IR, cs.CY) and the Wikipedia REST API (140 fixed topics, `corpus.py`);
   generations and rewrites come from DeepSeek V4 Flash at temperature 0.8.
   `run_audit.py corpus` rebuilds a corpus from these sources, but generation is
-  not seeded, so a rebuilt corpus will not match the evaluated one.
+  not seeded, so a rebuilt corpus will not match the evaluated one. A small
+  sample of the evaluated corpora (`sample_corpus/`: the first 10 abstracts and
+  the first 8 Wikipedia intros, same format) is included so the text rerun can
+  be tried without the full corpora; see "How to run" below.
 - **Graph benchmarks** `YelpChi.mat` and `Amazon.mat` from GADBench
   (<https://github.com/squareRoot3/GADBench>), which redistributes the CARE-GNN
   releases.
@@ -83,6 +86,21 @@ python run_audit.py corpus --out DIR
   (`$JUDGE_EP`, `$LLM_KEY`, `$LLM_MODEL` for DeepSeek; `$JUDGE_MODEL_PATH` for
   Qwen). About 2 minutes on CPU without detectors or judges (measured 106–114 s
   on a 4-CPU VM; the MiniLM model downloads once, about 15 s, on first use).
+
+Try the text rerun on the included sample first:
+
+```bash
+python run_audit.py text --corpus sample_corpus/
+```
+
+This is a smoke test: it runs the whole text pipeline in about 30 s (measured
+31.8 s on a 4-CPU VM), but the numbers will differ from the paper because the
+sample is small (10 abstracts, 8 Wikipedia intros) — a few values are
+degenerate at this size, e.g. the item-level classifier on Wikipedia. The
+DeepSeek numerical-judge rows show "(not run)" on the sample because the
+shipped per-item judge scores belong to the full corpus. To reproduce the
+paper's numbers, run the text mode on the full corpora from Supplementary
+Material S1 instead.
 - `graph`: own- and neighbour-feature classifiers under content forgery and
   relation camouflage, then the β sweeps for BWGNN (relations; combined) and
   CARE-style (combined).

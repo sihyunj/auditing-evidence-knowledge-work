@@ -219,7 +219,9 @@ def run_corpus(corpus, cached_judge=None, detectors=False, judges=()):
            "item_level_classifier": {"clean": auroc(item[0], item[1]), "post": auroc(item[0], item[2])},
            "word_count": {"clean": auroc(words[0], words[1]), "post": auroc(words[0], words[2])},
            "retrieval": retrieval(eH, eA, eZ, groups)}
-    if cached_judge is not None:  # shipped same-model numerical judge scores, complete triples
+    # shipped same-model numerical judge scores, complete triples; they are per-item for the
+    # full corpus only, so skip them when the corpus is a different size (e.g. the sample)
+    if cached_judge is not None and all(len(cached_judge[k]) == len(H) for k in ("human", "ai", "humanized")):
         res["numerical_judge"] = source_cluster_bootstrap(
             cached_judge["human"], cached_judge["ai"], cached_judge["humanized"], groups)
     if detectors:
