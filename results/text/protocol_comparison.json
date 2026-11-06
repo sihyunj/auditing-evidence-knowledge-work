@@ -1,0 +1,88 @@
+{
+  "abstracts": {
+    "original_ungrouped": {
+      "mean_fold_auroc": [
+        0.7331249999999998,
+        0.6247222222222222
+      ],
+      "sd_fold_auroc": [
+        0.06071629088140236,
+        0.07053514988165235
+      ],
+      "mean_seed_pooled_auroc": [
+        0.7301111111111112,
+        0.6221805555555556
+      ],
+      "average_oof_probability_auroc": [
+        0.7413888888888889,
+        0.6251388888888889
+      ]
+    },
+    "grouped": {
+      "mean_fold_auroc": [
+        0.8347427790380171,
+        0.7359912407057341
+      ],
+      "sd_fold_auroc": [
+        0.04712708845460132,
+        0.05859591375867742
+      ],
+      "mean_seed_pooled_auroc": [
+        0.8300694444444445,
+        0.7307569444444444
+      ],
+      "average_oof_probability_auroc": [
+        0.8339583333333334,
+        0.7328472222222222
+      ]
+    },
+    "length_only_auroc": {
+      "clean": 0.5761458333333334,
+      "post": 0.631076388888889,
+      "score": "whitespace-delimited word count; longer ranked as generated; no fitted classifier"
+    }
+  },
+  "wiki": {
+    "original_ungrouped": {
+      "mean_fold_auroc": [
+        0.5119115646258504,
+        0.5339591836734694
+      ],
+      "sd_fold_auroc": [
+        0.08601051527051959,
+        0.07909392370288361
+      ],
+      "mean_seed_pooled_auroc": [
+        0.504701448125372,
+        0.5278912914104344
+      ],
+      "average_oof_probability_auroc": [
+        0.5129934536798254,
+        0.5451299345367981
+      ]
+    },
+    "grouped": {
+      "mean_fold_auroc": [
+        0.8496494331065757,
+        0.868734693877551
+      ],
+      "sd_fold_auroc": [
+        0.048681609990627456,
+        0.054301837428205386
+      ],
+      "mean_seed_pooled_auroc": [
+        0.8400912517357666,
+        0.8567546121801228
+      ],
+      "average_oof_probability_auroc": [
+        0.843483435826225,
+        0.8647093830589169
+      ]
+    },
+    "length_only_auroc": {
+      "clean": 0.8730410632810951,
+      "post": 0.9415790517754413,
+      "score": "whitespace-delimited word count; longer ranked as generated; no fitted classifier"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "judge_model": "deepseek-v4-flash",
+  "method": "binary Yes/No generate, N=4 samples temp=0.8, P(AI)=frac Yes",
+  "note": "FAMILY-fixed (DeepSeek), METHOD-switched to binary -> isolates the inversion cause",
+  "clean_auroc": [
+    0.469,
+    0.036,
+    0.397,
+    0.538
+  ],
+  "postrewrite_auroc": [
+    0.498,
+    0.036,
+    0.424,
+    0.568
+  ],
+  "mean_score": {
+    "human": 0.688,
+    "ai": 0.667,
+    "humanized": 0.685
+  },
+  "n": {
+    "human": 120,
+    "ai": 120,
+    "humanized": 120
+  }
+}

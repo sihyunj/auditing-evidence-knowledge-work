@@ -1,0 +1,27 @@
+{
+  "judge_model": "Qwen3.6-35B-A3B-4bit-DWQ (logit-readout)",
+  "method": "binary Yes/No next-token logit readout (no generation, thinking disabled)",
+  "note": "independent-family judge (Qwen vs DeepSeek generator); cached deepseek texts",
+  "clean_auroc": [
+    0.783,
+    0.029,
+    0.724,
+    0.837
+  ],
+  "postrewrite_auroc": [
+    0.765,
+    0.031,
+    0.702,
+    0.821
+  ],
+  "mean_score": {
+    "human": 0.091,
+    "ai": 0.176,
+    "humanized": 0.163
+  },
+  "n": {
+    "human": 120,
+    "ai": 120,
+    "humanized": 120
+  }
+}

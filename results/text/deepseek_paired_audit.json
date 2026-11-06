@@ -1,0 +1,21 @@
+{
+  "n_complete_pairs": 111,
+  "n_source_groups": 101,
+  "bootstrap_resamples": 4000,
+  "clean": 0.5401347293239186,
+  "post": 0.42200308416524634,
+  "drop": 0.11813164515867225,
+  "clean_ci": [
+    0.4664833211800763,
+    0.6119953963642913
+  ],
+  "post_ci": [
+    0.3474957500387322,
+    0.49694569419464296
+  ],
+  "drop_ci": [
+    0.04919264034005522,
+    0.1841632172713254
+  ],
+  "resampling": "paired source-cluster bootstrap; fixed predictions; no model refitting"
+}

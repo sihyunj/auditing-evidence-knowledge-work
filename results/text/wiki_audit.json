@@ -1,0 +1,177 @@
+{
+  "n": 71,
+  "unique_reference_texts": 71,
+  "words": {
+    "human": {
+      "min": 36,
+      "median": 87.0,
+      "max": 226
+    },
+    "ai": {
+      "min": 85,
+      "median": 120.0,
+      "max": 142
+    },
+    "humanized_ai": {
+      "min": 91,
+      "median": 134.0,
+      "max": 195
+    }
+  },
+  "grouped_embedding": {
+    "n_complete_pairs": 71,
+    "n_source_groups": 71,
+    "bootstrap_resamples": 4000,
+    "clean": 0.843483435826225,
+    "post": 0.8647093830589169,
+    "drop": -0.02122594723269189,
+    "clean_ci": [
+      0.7952737552073001,
+      0.8954622098789923
+    ],
+    "post_ci": [
+      0.8163013291013688,
+      0.9172832771275541
+    ],
+    "drop_ci": [
+      -0.04106328109502089,
+      -0.001785360047609652
+    ],
+    "resampling": "paired source-cluster bootstrap; fixed predictions; no model refitting"
+  },
+  "seed_auc": [
+    {
+      "seed": 0,
+      "clean": 0.8484427692918072,
+      "post": 0.8619321563181908
+    },
+    {
+      "seed": 1,
+      "clean": 0.844872049196588,
+      "post": 0.8615354096409442
+    },
+    {
+      "seed": 2,
+      "clean": 0.8357468756199167,
+      "post": 0.8575679428684785
+    },
+    {
+      "seed": 3,
+      "clean": 0.8365403689744099,
+      "post": 0.849037889307677
+    },
+    {
+      "seed": 4,
+      "clean": 0.8242412219797659,
+      "post": 0.8442769291807181
+    },
+    {
+      "seed": 5,
+      "clean": 0.8442769291807181,
+      "post": 0.8649077563975401
+    },
+    {
+      "seed": 6,
+      "clean": 0.8413013291013687,
+      "post": 0.8585598095615948
+    },
+    {
+      "seed": 7,
+      "clean": 0.8353501289426701,
+      "post": 0.8454671692124578
+    },
+    {
+      "seed": 8,
+      "clean": 0.8422931957944852,
+      "post": 0.8583614362229716
+    },
+    {
+      "seed": 9,
+      "clean": 0.8478476492759373,
+      "post": 0.8658996230906566
+    }
+  ],
+  "grouped_embedding_score": "mean out-of-fold probability over 10 grouped five-fold repetitions",
+  "source_group_definition": "exact reference-text identity; paired generated and rewritten entries share group",
+  "retrieval": {
+    "full": 0.9938504265026781,
+    "original_asymmetric_loo": 0.0,
+    "symmetric_source_group_heldout": 0.5814322555048602,
+    "heldout_protocol": "remove every generated entry sharing the query reference source from the log for BOTH classes",
+    "mean_similarity": {
+      "reference_full": 0.8150959610939026,
+      "rewritten_full": 0.9454713463783264,
+      "reference_heldout": 0.41925206780433655,
+      "rewritten_heldout": 0.45019641518592834
+    }
+  },
+  "coverage": {
+    "1.0": {
+      "mean": 0.9938504265026781,
+      "sd": 0.0,
+      "seeds": 25
+    },
+    "0.75": {
+      "mean": 0.7805911525490974,
+      "sd": 0.002901669690635414,
+      "seeds": 25
+    },
+    "0.5": {
+      "mean": 0.6459353302916088,
+      "sd": 0.005908910112177005,
+      "seeds": 25
+    },
+    "0.25": {
+      "mean": 0.5697282285260861,
+      "sd": 0.007753936508582729,
+      "seeds": 25
+    },
+    "0.1": {
+      "mean": 0.5540170601071216,
+      "sd": 0.01848933166246329,
+      "seeds": 25
+    }
+  },
+  "retrieval_full_cluster_ci": {
+    "n_complete_pairs": 71,
+    "n_source_groups": 71,
+    "bootstrap_resamples": 4000,
+    "clean": 0.9938504265026781,
+    "post": 0.9938504265026781,
+    "drop": 0.0,
+    "clean_ci": [
+      0.985315413608411,
+      0.9996032533227535
+    ],
+    "post_ci": [
+      0.985315413608411,
+      0.9996032533227535
+    ],
+    "drop_ci": [
+      0.0,
+      0.0
+    ],
+    "resampling": "paired source-cluster bootstrap; fixed predictions; no model refitting"
+  },
+  "retrieval_heldout_cluster_ci": {
+    "n_complete_pairs": 71,
+    "n_source_groups": 71,
+    "bootstrap_resamples": 4000,
+    "clean": 0.5814322555048602,
+    "post": 0.5814322555048602,
+    "drop": 0.0,
+    "clean_ci": [
+      0.5397738543939694,
+      0.6302320968061893
+    ],
+    "post_ci": [
+      0.5397738543939694,
+      0.6302320968061893
+    ],
+    "drop_ci": [
+      0.0,
+      0.0
+    ],
+    "resampling": "paired source-cluster bootstrap; fixed predictions; no model refitting"
+  }
+}

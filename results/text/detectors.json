@@ -1,0 +1,27 @@
+{
+  "n": {
+    "human": 120,
+    "ai": 120,
+    "humanized": 120
+  },
+  "roberta_chatgpt_detector": {
+    "clean_auroc": [
+      0.829,
+      0.025
+    ],
+    "postrewrite_auroc": [
+      0.564,
+      0.036
+    ]
+  },
+  "gpt2_perplexity": {
+    "clean_auroc": [
+      0.717,
+      0.034
+    ],
+    "postrewrite_auroc": [
+      0.684,
+      0.035
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "attack": "content-forgery (fraud own-features <- random benign); structural features recomputed on attacked graph",
+  "yelp": {
+    "dataset": "yelp",
+    "n_labelled": 45954,
+    "n_features": 32,
+    "fraud_rate": 0.145,
+    "seeds": 5,
+    "fraud_neighbourhood_homophily": 0.195,
+    "struct_cosine_clean_vs_contentattack": 0.9991,
+    "intrinsic": {
+      "clean": {
+        "auprc": [
+          0.815,
+          0.004
+        ],
+        "auroc": [
+          0.944,
+          0.002
+        ]
+      },
+      "attack": {
+        "auprc": [
+          0.142,
+          0.002
+        ],
+        "auroc": [
+          0.497,
+          0.004
+        ]
+      }
+    },
+    "structural": {
+      "clean": {
+        "auprc": [
+          0.502,
+          0.02
+        ],
+        "auroc": [
+          0.844,
+          0.007
+        ]
+      },
+      "attack": {
+        "auprc": [
+          0.252,
+          0.004
+        ],
+        "auroc": [
+          0.726,
+          0.004
+        ]
+      }
+    }
+  },
+  "amazon": {
+    "dataset": "amazon",
+    "n_labelled": 8639,
+    "n_features": 25,
+    "fraud_rate": 0.095,
+    "seeds": 5,
+    "fraud_neighbourhood_homophily": 0.103,
+    "struct_cosine_clean_vs_contentattack": 0.9987,
+    "intrinsic": {
+      "clean": {
+        "auprc": [
+          0.917,
+          0.01
+        ],
+        "auroc": [
+          0.98,
+          0.002
+        ]
+      },
+      "attack": {
+        "auprc": [
+          0.094,
+          0.004
+        ],
+        "auroc": [
+          0.496,
+          0.021
+        ]
+      }
+    },
+    "structural": {
+      "clean": {
+        "auprc": [
+          0.705,
+          0.023
+        ],
+        "auroc": [
+          0.931,
+          0.004
+        ]
+      },
+      "attack": {
+        "auprc": [
+          0.587,
+          0.034
+        ],
+        "auroc": [
+          0.891,
+          0.007
+        ]
+      }
+    }
+  }
+}

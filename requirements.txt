@@ -1,0 +1,9 @@
+# `python run_audit.py` (check mode) needs only numpy.
+numpy>=1.26
+scipy>=1.11            # graph study: .mat loading, sparse aggregation
+scikit-learn>=1.8      # text and graph studies
+torch>=2.12            # text encoder, detectors, GNNs
+sentence-transformers>=5.5
+transformers>=5.11     # GPT-2 / RoBERTa detectors
+# Qwen logit judge only (Apple silicon):
+# mlx-lm
