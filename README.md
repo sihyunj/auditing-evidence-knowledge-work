@@ -72,7 +72,7 @@ python run_audit.py
 Reads the shipped results in `results/`, recomputes the DeepSeek numerical-judge
 AUROCs from its per-item scores, and prints 129 headline values next to the values
 reported in the paper, marking any that differ at the paper's precision (exit code
-0 if all agree). Runs in under half a second (measured 0.2–0.4 s on a 4-CPU VM).
+0 if all agree). Runs in under half a second (measured 0.36–0.37 s on a 4-CPU VM).
 
 Full reruns write JSON to `outputs/` and print the same comparison:
 
@@ -87,8 +87,9 @@ python run_audit.py corpus --out DIR
   intervals; the DeepSeek numerical judge uses its shipped per-item scores.
   `--detectors` adds GPT-2 and RoBERTa; `--judges` re-scores the abstracts
   (`$JUDGE_EP`, `$LLM_KEY`, `$LLM_MODEL` for DeepSeek; `$JUDGE_MODEL_PATH` for
-  Qwen). About 2 minutes on CPU without detectors or judges (measured 106–114 s
-  on a 4-CPU VM; the MiniLM model downloads once, about 15 s, on first use).
+  Qwen). About 2 minutes on CPU without detectors or judges (measured 110–114 s
+  on a 4-CPU VM; the MiniLM model downloads once, about 15 s, on first use, and
+  is already cached on repeat runs).
 
 Run the text rerun on the included full corpora:
 
@@ -97,7 +98,7 @@ python run_audit.py text --corpus corpus/
 ```
 
 This runs the whole text pipeline in about 2 minutes on CPU (measured
-106–114 s on a 4-CPU VM) and reproduces the paper's numbers. The default
+110–114 s on a 4-CPU VM) and reproduces the paper's numbers. The default
 check (`python run_audit.py`) verifies the same 129 headline values from the
 shipped results in under half a second.
 - `graph`: own- and neighbour-feature classifiers under content forgery and
